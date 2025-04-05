@@ -20,9 +20,11 @@ public class CharacterScript : MonoBehaviour
     bool isGameOver;
     bool isShield;
     float record;
-
+    [SerializeField] TMP_Text record_text;
+    
     void Start()
     {
+    
     }
     void Update()
     {
