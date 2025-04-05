@@ -19,6 +19,7 @@ public class CharacterScript : MonoBehaviour
     float roundScore;
     bool isGameOver;
     bool isShield;
+    float record;
 
     void Start()
     {
@@ -106,10 +107,10 @@ public class CharacterScript : MonoBehaviour
         if (other.CompareTag("Shield"))
         {
             isShield = true;
-            Invoke("DeactivateShield", 10f); // через сколько сек пропадет щит (должны быть одинаковы)
+            Invoke("DeactivateShield", 10f); // Г·ГҐГ°ГҐГ§ Г±ГЄГ®Г«ГјГЄГ® Г±ГҐГЄ ГЇГ°Г®ГЇГ Г¤ГҐГІ Г№ГЁГІ (Г¤Г®Г«Г¦Г­Г» ГЎГ»ГІГј Г®Г¤ГЁГ­Г ГЄГ®ГўГ»)
             GameObject vfx = Instantiate(shieldVFX, transform.position + transform.up, other.transform.rotation);
             vfx.transform.SetParent(this.transform);
-            Destroy(vfx, 10f); // через сколько сек исчезнет эффект щита (должны быть одинаковы)
+            Destroy(vfx, 10f); // Г·ГҐГ°ГҐГ§ Г±ГЄГ®Г«ГјГЄГ® Г±ГҐГЄ ГЁГ±Г·ГҐГ§Г­ГҐГІ ГЅГґГґГҐГЄГІ Г№ГЁГІГ  (Г¤Г®Г«Г¦Г­Г» ГЎГ»ГІГј Г®Г¤ГЁГ­Г ГЄГ®ГўГ»)
             sound.clip = shieldSFX;
             sound.Play();
             Destroy(other.gameObject);
